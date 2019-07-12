@@ -155,7 +155,7 @@ function mainfunction(name) {
     drop.setAttribute("id", "select");
     drop.setAttribute("class", "drop");
     var option = document.createElement("option");
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i <=10; i++) {
         option = document.createElement("option");
         option.setAttribute("value", arr[i]);
         drop.setAttribute("onchange", "mainfunction(value)");
