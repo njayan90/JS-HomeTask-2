@@ -17,25 +17,32 @@ function headfunction() {
     x.appendChild(p);
     document.body.appendChild(x);
 }
+
+var myMain = document.getElementById("myMain");
+
 function mainfunction(name) {
-    var i;
+    
     var selectedOption = 0;
     var arr = ["All", "The Times Of India", "Hindustan Times", "The Hindu", "The Telegraph", "Deccan Chronicle", "Mumbai Mirror", "The Economic Times", "DNA", "The Tribune", "The New Indian Express"];
     var myMain = document.getElementById("myMain");
     myMain.innerHTML = '';
-    for (i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 10; i++) {
 
         var main = document.createElement("div");
         main.setAttribute("class", "main");
+        main.setAttribute("id", "main");
         var center = document.createElement("div");
         center.setAttribute("class", "center");
+        center.setAttribute("id", "center");
         var section = document.createElement("div");
         section.setAttribute("class", "section");
+        section.setAttribute("id", "section");
 
         var section1 = document.createElement("div");
         section1.setAttribute("class", "section1");
         var section2 = document.createElement("div");
         section2.setAttribute("class", "section2");
+        section2.setAttribute("id", "section2");
 
         if (name == "All" || name == arr[i]) {
             var img = document.createElement("img");
@@ -59,53 +66,12 @@ function mainfunction(name) {
             myMain.appendChild(main);
             document.body.appendChild(myMain);
 
-            var p = document.createElement("p");
-            var span1 = document.createElement("span");
-            span1.setAttribute("class", "opac");
-            var span1_t = document.createTextNode("Posted On");
-            span1.appendChild(span1_t);
-            p.appendChild(span1);
-            section2.appendChild(p);
-            section.appendChild(section2);
-            center.appendChild(section);
-            main.appendChild(center);
-            myMain.appendChild(main);
-            document.body.appendChild(myMain);
-
-            var span2 = document.createElement("span");
-            var span2_t = document.createTextNode(" 29 June,2019 ");
-            span2.appendChild(span2_t);
-            p.appendChild(span2);
-            section2.appendChild(p);
-            section.appendChild(section2);
-            center.appendChild(section);
-            main.appendChild(center);
-            myMain.appendChild(main);
-            document.body.appendChild(myMain);
-
-            span1 = document.createElement("span");
-            span1.setAttribute("class", "opac");
-            span1_t = document.createTextNode("// Category:");
-            span1.appendChild(span1_t);
-            p.appendChild(span1);
-            section2.appendChild(p);
-            section.appendChild(section2);
-            center.appendChild(section);
-            main.appendChild(center);
-            myMain.appendChild(main);
-            document.body.appendChild(myMain);
-
-            span2 = document.createElement("span");
-            span2_t = document.createTextNode(" Category One ");
-            span2.appendChild(span2_t);
-            p.appendChild(span2);
-            section2.appendChild(p);
-            section.appendChild(section2);
-            center.appendChild(section);
-            main.appendChild(center);
-            myMain.appendChild(main);
-            document.body.appendChild(myMain);
-
+            var p=document.createElement("p");
+            spanopac("Posted On",main,center,section,section2,p);
+            span(" 29 June,2019 ",main,center,section,section2,p);
+            spanopac("// Category:",main,center,section,section2,p);
+            span(" Category One ",main,center,section,section2,p);
+        
             p = document.createElement("p");
             var p_t = document.createTextNode("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi voluptates, nulla porro accusamus aperiam incidunt delectus quisquam totam unde, velit dolore minima. At doloremque ea eius iste fugiat dolorem sapiente? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ducimus perspiciatis nesciunt vero mollitia voluptatum beatae, neque molestias, doloremque harum at impedit nobis optio! Quisquam corporis officia fugiat aliquid tenetur?");
             p.setAttribute("id", "text");
@@ -155,7 +121,7 @@ function mainfunction(name) {
     drop.setAttribute("id", "select");
     drop.setAttribute("class", "drop");
     var option = document.createElement("option");
-    for (i = 0; i <=10; i++) {
+    for (let i = 0; i <=10; i++) {
         option = document.createElement("option");
         option.setAttribute("value", arr[i]);
         drop.setAttribute("onchange", "mainfunction(value)");
@@ -218,8 +184,8 @@ function popupfun(id) {
     var para = ["All", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi voluptates, nulla porro accusamus aperiam incidunt delectus quisquam totam unde, velit dolore minima. At doloremque ea eius iste fugiat dolorem sapiente? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ducimus perspiciatis nesciunt vero mollitia voluptatum beatae, neque molestias, doloremque harum at impedit nobis optio! Quisquam corporis officia fugiat aliquid tenetur?", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi voluptates, nulla porro accusamus aperiam incidunt delectus quisquam totam unde, velit dolore minima. At doloremque ea eius iste fugiat dolorem sapiente? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ducimus perspiciatis nesciunt vero mollitia voluptatum beatae, neque molestias, doloremque harum at impedit nobis optio! Quisquam corporis officia fugiat aliquid tenetur?", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi voluptates, nulla porro accusamus aperiam incidunt delectus quisquam totam unde, velit dolore minima. At doloremque ea eius iste fugiat dolorem sapiente? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ducimus perspiciatis nesciunt vero mollitia voluptatum beatae, neque molestias, doloremque harum at impedit nobis optio! Quisquam corporis officia fugiat aliquid tenetur?", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi voluptates, nulla porro accusamus aperiam incidunt delectus quisquam totam unde, velit dolore minima. At doloremque ea eius iste fugiat dolorem sapiente? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ducimus perspiciatis nesciunt vero mollitia voluptatum beatae, neque molestias, doloremque harum at impedit nobis optio! Quisquam corporis officia fugiat aliquid tenetur?", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi voluptates, nulla porro accusamus aperiam incidunt delectus quisquam totam unde, velit dolore minima. At doloremque ea eius iste fugiat dolorem sapiente? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ducimus perspiciatis nesciunt vero mollitia voluptatum beatae, neque molestias, doloremque harum at impedit nobis optio! Quisquam corporis officia fugiat aliquid tenetur?", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi voluptates, nulla porro accusamus aperiam incidunt delectus quisquam totam unde, velit dolore minima. At doloremque ea eius iste fugiat dolorem sapiente? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ducimus perspiciatis nesciunt vero mollitia voluptatum beatae, neque molestias, doloremque harum at impedit nobis optio! Quisquam corporis officia fugiat aliquid tenetur?", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi voluptates, nulla porro accusamus aperiam incidunt delectus quisquam totam unde, velit dolore minima. At doloremque ea eius iste fugiat dolorem sapiente? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ducimus perspiciatis nesciunt vero mollitia voluptatum beatae, neque molestias, doloremque harum at impedit nobis optio! Quisquam corporis officia fugiat aliquid tenetur?", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi voluptates, nulla porro accusamus aperiam incidunt delectus quisquam totam unde, velit dolore minima. At doloremque ea eius iste fugiat dolorem sapiente? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ducimus perspiciatis nesciunt vero mollitia voluptatum beatae, neque molestias, doloremque harum at impedit nobis optio! Quisquam corporis officia fugiat aliquid tenetur?", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi voluptates, nulla porro accusamus aperiam incidunt delectus quisquam totam unde, velit dolore minima. At doloremque ea eius iste fugiat dolorem sapiente? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ducimus perspiciatis nesciunt vero mollitia voluptatum beatae, neque molestias, doloremque harum at impedit nobis optio! Quisquam corporis officia fugiat aliquid tenetur?", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi voluptates, nulla porro accusamus aperiam incidunt delectus quisquam totam unde, velit dolore minima. At doloremque ea eius iste fugiat dolorem sapiente? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ducimus perspiciatis nesciunt vero mollitia voluptatum beatae, neque molestias, doloremque harum at impedit nobis optio! Quisquam corporis officia fugiat aliquid tenetur?"]
     var arr = ["All", "The Times Of India", "Hindustan Times", "The Hindu", "The Telegraph", "Deccan Chronicle", "Mumbai Mirror", "The Economic Times", "DNA", "The Tribune", "The New Indian Express"];
     var para1;
-    var j;
-    for (j = 1; j <= 10; j++) {
+    
+    for (let j = 1; j <= 10; j++) {
         if (arr[j] == id) {
             para1 = para[j];
         }
@@ -272,3 +238,34 @@ function validateEmail(email) {
         return false;
     }
 }
+
+function spanopac(content,main,center,section,section2,p){
+   
+             var span1 = document.createElement("span");
+            span1.setAttribute("class", "opac");
+            var span1_t = document.createTextNode(content);
+            span1.appendChild(span1_t);
+            p.appendChild(span1);
+            section2.appendChild(p);
+            section.appendChild(section2);
+            center.appendChild(section);
+            main.appendChild(center);
+            myMain.appendChild(main);
+            document.body.appendChild(myMain);
+           
+}
+function span(content,main,center,section,section2,p){
+   
+   var span1 = document.createElement("span");
+   var span1_t = document.createTextNode(content);
+   span1.appendChild(span1_t);
+   p.appendChild(span1);
+   section2.appendChild(p);
+   section.appendChild(section2);
+   center.appendChild(section);
+   main.appendChild(center);
+   myMain.appendChild(main);
+   document.body.appendChild(myMain);
+  
+}
+
