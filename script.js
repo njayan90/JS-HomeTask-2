@@ -23,7 +23,7 @@ function mainfunction(name) {
     let myMain = document.getElementById("myMain");
     myMain.innerHTML = '';
     for (let i = 1; i <= 10; i++) {
-        let main = create("div", "main", "main");
+        var main = create("div", "main", "main");
         let center = create("div", "center", "center");
         let section = create("div", "section", "section");
         let section1 = create("div", "section1", "section1");
@@ -81,7 +81,7 @@ function mainfunction(name) {
     }
     let side = create("div", "side", "side");
     let h4 = create("h4", "", "");
-    let h4_t = create_text("SELECT CATEGORY");
+    var h4_t = create_text("SELECT CATEGORY");
     h4.appendChild(h4_t);
     main.appendChild(h4);
     myMain.appendChild(main);
@@ -104,7 +104,7 @@ function mainfunction(name) {
         document.getElementById("select").selectedIndex = selectedOption;
     }
     h4 = create("h4", "", "");
-    let h4_t = create_text("SUBSCRIBE");
+    var h4_t = create_text("SUBSCRIBE");
     h4.appendChild(h4_t);
     main.appendChild(h4);
     myMain.appendChild(main);
@@ -134,7 +134,6 @@ function footfunction() {
     p.appendChild(p_t);
     foot.appendChild(p);
     document.body.appendChild(foot);
-
 }
 
 function popupfun(id) {
@@ -154,7 +153,6 @@ function popupfun(id) {
     close.setAttribute("onclick", "closefun()");
     let close_t = create_text("\u00D7");
     close.appendChild(close_t);
-
     let modal_body = create("div", "modal_body", "");
     let modal_head_text = create_text(id);
     let modal_body_text = create_text(para1);
@@ -178,7 +176,6 @@ var count = 0;
 function validateEmail(email) {
     let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (mailformat.test(email)) {
-
         alert("Successfully Subscribed");
         localStorage.setItem(++count, email);
         return true;
