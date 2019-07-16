@@ -19,7 +19,7 @@ function headfunction() {
 
 function mainfunction(name) {
     let selectedOption = 0;
-    let arr = ["All", "The Times Of India", "Hindustan Times", "The Hindu", "The Telegraph", "Deccan Chronicle", "Mumbai Mirror", "The Economic Times", "DNA", "The Tribune", "The New Indian Express"];
+    const arr = ["All", "The Times Of India", "Hindustan Times", "The Hindu", "The Telegraph", "Deccan Chronicle", "Mumbai Mirror", "The Economic Times", "DNA", "The Tribune", "The New Indian Express"];
     let myMain = document.getElementById("myMain");
     myMain.innerHTML = '';
     for (let i = 1; i <= 10; i++) {
@@ -29,23 +29,9 @@ function mainfunction(name) {
         let section1 = create("div", "section1", "section1");
         let section2 = create("div", "section2", "section2");
         if (name == "All" || name == arr[i]) {
-            let img = create("img", "img", "img");
-            img.setAttribute("src", "White-Blank-Wallpaper-14.png");
-            section1.appendChild(img);
-            section.appendChild(section1);
-            center.appendChild(section);
-            main.appendChild(center);
-            myMain.appendChild(main);
-            document.body.appendChild(myMain);
-            let h1 = create("h1", "one", "one");
-            let h1_t = create_text(arr[i]);
-            h1.appendChild(h1_t);
-            section2.appendChild(h1);
-            section.appendChild(section2);
-            center.appendChild(section);
-            main.appendChild(center);
-            myMain.appendChild(main);
-            document.body.appendChild(myMain);
+            
+            create_img(section1,section,center,main,myMain);
+            create_title(section2,section,center,main,myMain,arr[i]);
             let p = create("p", "", "");
             spanopac("Posted On", main, center, section, section2, p);
             span(" 29 June,2019 ", main, center, section, section2, p);
@@ -222,5 +208,31 @@ function create(element, class_name, id_name) {
 function create_text(element_text) {
     let text = document.createTextNode(element_text);
     return (text);
+}
+
+function create_img(section1,section,center,main,myMain) {
+
+    let img = create("img", "img", "img");
+    img.setAttribute("src", "White-Blank-Wallpaper-14.png");
+    section1.appendChild(img);
+    section.appendChild(section1);
+    center.appendChild(section);
+    main.appendChild(center);
+    myMain.appendChild(main);
+    document.body.appendChild(myMain);
+}
+
+function create_title(section2, section, center, main, myMain,paper_name) {
+
+    let h1 = create("h1", "one", "one");
+    let h1_t = create_text(paper_name);
+    h1.appendChild(h1_t);
+    section2.appendChild(h1);
+    section.appendChild(section2);
+    center.appendChild(section);
+    main.appendChild(center);
+    myMain.appendChild(main);
+    document.body.appendChild(myMain);
+
 }
 
