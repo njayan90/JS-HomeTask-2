@@ -18,8 +18,6 @@ function header_section() {
 }
 
 function body_section(name) {
-    
-	
     const arr = ["All", "The Times Of India", "Hindustan Times", "The Hindu", "The Telegraph", "Deccan Chronicle", "Mumbai Mirror", "The Economic Times", "DNA", "The Tribune", "The New Indian Express"];
     let myMain = document.getElementById("myMain");
     myMain.innerHTML = '';
@@ -30,24 +28,24 @@ function body_section(name) {
         let section1 = create_element("div", "section1", "section1");
         let section2 = create_element("div", "section2", "section2");
         if (name == "All" || name == arr[i]) {
-            
-            create_img(section1,section,center,main,myMain);
-            create_title(section2,section,center,main,myMain,arr[i]);
+
+            create_img(section1, section, center, main, myMain);
+            create_title(section2, section, center, main, myMain, arr[i]);
             let p = create_element("p", "", "");
             spanopac("Posted On", main, center, section, section2, p);
             span(" 29 June,2019 ", main, center, section, section2, p);
             spanopac("// Category:", main, center, section, section2, p);
             span(" Category One ", main, center, section, section2, p);
-			p = create_element("p", "", "");
-			create_content(section2,section,center,main,myMain,p);
-            create_button(section2,section,center,main,myMain,arr[i]);
-			create_border(section,center,main,myMain);
-            
-            
+            p = create_element("p", "", "");
+            create_content(section2, section, center, main, myMain, p);
+            create_button(section2, section, center, main, myMain, arr[i]);
+            create_border(section, center, main, myMain);
+
+
         }
     }
-	create_dropdown(main,myMain,arr,name);
-	create_email(main,myMain);
+    create_dropdown(main, myMain, arr, name);
+    create_email(main, myMain);
 }
 
 function footer_section() {
@@ -148,8 +146,7 @@ function create_text(element_text) {
     return (text);
 }
 
-function create_img(section1,section,center,main,myMain) {
-
+function create_img(section1, section, center, main, myMain) {
     let img = create_element("img", "img", "img");
     img.setAttribute("src", "White-Blank-Wallpaper-14.png");
     section1.appendChild(img);
@@ -160,8 +157,7 @@ function create_img(section1,section,center,main,myMain) {
     document.body.appendChild(myMain);
 }
 
-function create_title(section2, section, center, main, myMain,paper_name) {
-
+function create_title(section2, section, center, main, myMain, paper_name) {
     let h1 = create_element("h1", "one", "one");
     let h1_t = create_text(paper_name);
     h1.appendChild(h1_t);
@@ -174,46 +170,44 @@ function create_title(section2, section, center, main, myMain,paper_name) {
 
 }
 
-function create_content(section2,section,center,main,myMain,p){
-	
-			let p_t = create_text("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi voluptates, nulla porro accusamus aperiam incidunt delectus quisquam totam unde, velit dolore minima. At doloremque ea eius iste fugiat dolorem sapiente? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ducimus perspiciatis nesciunt vero mollitia voluptatum beatae, neque molestias, doloremque harum at impedit nobis optio! Quisquam corporis officia fugiat aliquid tenetur?");
-            p.setAttribute("id", "text");
-            p.appendChild(p_t);
-            section2.appendChild(p);
-            section.appendChild(section2);
-            center.appendChild(section);
-            main.appendChild(center);
-            myMain.appendChild(main);
-            document.body.appendChild(myMain);
+function create_content(section2, section, center, main, myMain, p) {
+    let p_t = create_text("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi voluptates, nulla porro accusamus aperiam incidunt delectus quisquam totam unde, velit dolore minima. At doloremque ea eius iste fugiat dolorem sapiente? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ducimus perspiciatis nesciunt vero mollitia voluptatum beatae, neque molestias, doloremque harum at impedit nobis optio! Quisquam corporis officia fugiat aliquid tenetur?");
+    p.setAttribute("id", "text");
+    p.appendChild(p_t);
+    section2.appendChild(p);
+    section.appendChild(section2);
+    center.appendChild(section);
+    main.appendChild(center);
+    myMain.appendChild(main);
+    document.body.appendChild(myMain);
 
 }
 
-function  create_button(section2,section,center,main,myMain,paper_name){
-			let button = create_element("button", "button", paper_name);
-            let button_t = create_text("Continue Reading");
-            button.appendChild(button_t);
-            section2.appendChild(button);
-            section.appendChild(section2);
-            center.appendChild(section);
-            main.appendChild(center);
-            myMain.appendChild(main);
-            document.body.appendChild(myMain);
-			button.setAttribute("onclick", "modal_window(id)");
+function create_button(section2, section, center, main, myMain, paper_name) {
+    let button = create_element("button", "button", paper_name);
+    let button_t = create_text("Continue Reading");
+    button.appendChild(button_t);
+    section2.appendChild(button);
+    section.appendChild(section2);
+    center.appendChild(section);
+    main.appendChild(center);
+    myMain.appendChild(main);
+    document.body.appendChild(myMain);
+    button.setAttribute("onclick", "modal_window(id)");
 }
 
-function create_border(section,center,main,myMain){
-	
-			let border = create_element("div", "border", "border");
-            section.appendChild(border);
-            center.appendChild(section);
-            main.appendChild(center);
-            myMain.appendChild(main);
-            document.body.appendChild(myMain);
+function create_border(section, center, main, myMain) {
+    let border = create_element("div", "border", "border");
+    section.appendChild(border);
+    center.appendChild(section);
+    main.appendChild(center);
+    myMain.appendChild(main);
+    document.body.appendChild(myMain);
 }
 
-function create_dropdown(main,myMain,arr,name){
-	let selectedOption=0;
-	let side = create_element("div", "side", "side");
+function create_dropdown(main, myMain, arr, name) {
+    let selectedOption = 0;
+    let side = create_element("div", "side", "side");
     let h4 = create_element("h4", "", "");
     var h4_t = create_text("SELECT CATEGORY");
     h4.appendChild(h4_t);
@@ -237,11 +231,10 @@ function create_dropdown(main,myMain,arr,name){
         }
         document.getElementById("select").selectedIndex = selectedOption;
     }
-		
 }
 
-function create_email(main,myMain){
-	h4 = create_element("h4", "", "");
+function create_email(main, myMain) {
+    h4 = create_element("h4", "", "");
     var h4_t = create_text("SUBSCRIBE");
     h4.appendChild(h4_t);
     main.appendChild(h4);
