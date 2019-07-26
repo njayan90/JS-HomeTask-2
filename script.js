@@ -3,7 +3,6 @@ let myMain = document.getElementById("myMain");
 let main = create_element("div", "main", "main");
 let center = create_element("div", "center", "center");
 let side = create_element("div", "side", "side");
-var flag = 0;
 
 function load() {
     header_section();
@@ -26,18 +25,9 @@ function header_section() {
 
 function body_section() {
     center.innerHTML = '';
-    for (let i = 1; i <= 10; i++) {
-        let section = create_element("div", "section", "section");
-        let section1 = create_element("div", "section1", "section1");
-        let section2 = create_element("div", "section2", "section2");
-        create_tile(arr[i]);
-    }
-    if (flag == 1) {
-        return;
-    }
+    create_all_tiles();
     create_dropdown(name);
     create_email();
-    flag = 1;
 }
 
 function footer_section() {
@@ -217,13 +207,17 @@ function create_email() {
 function create_single_tile(value) {
     center.innerHTML = '';
     if (value == "All") {
-        body_section();
+        create_all_tiles();
     }
     else {
         create_tile(value);
     }
 }
-
+function create_all_tiles() {
+    for (let i = 1; i <= 10; i++) {
+        create_tile(arr[i]);
+    }
+}
 function create_tile(name) {
     let section = create_element("div", "section", "section");
     let section1 = create_element("div", "section1", "section1");
